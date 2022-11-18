@@ -18,10 +18,10 @@ function draw() {
     stroke(i * angle, 100, 50);
     strokeWeight(3 * cos(i));
     rotateX(angle);
-    beginShape(TRIANGLE_STRIP);
-    for(let a = 2; a < res; a+=res/180){
-        let r = random(50);
-			r = (50 * abs(sin(a * 4))) + 200;
+    beginShape(LINES);
+    for(let a = 11; a < res; a+=res/90){
+        let r = random(60);
+        r = (50 * abs(sin(a * 10))) + 200;
       let x = r * cos(a * offset);
       let y = r * sin(a);
 			let z = r * cos(angle);
@@ -31,6 +31,6 @@ function draw() {
     }
     endShape();
   }
-  angle += 0.01;
+  angle += 0.02;
   r += 0.01;
 }
