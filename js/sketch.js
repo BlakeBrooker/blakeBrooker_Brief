@@ -7,7 +7,7 @@ let xoff = 0;
 function setup() {
   createCanvas(windowWidth, windowHeight, WEBGL); // how big the canvas is
   angleMode(DEGREES);
-  colorMode(HSB); // what colour format to copy
+  colorMode(RGB); // what colour format to copy
 
   noFill();
   
@@ -17,7 +17,7 @@ function draw() {
   background(0);
 	let offset = map(noise(xoff), 0, 1, 2, 5);
   for(let i = 3; i < 50; i++){ // draws the pattern up to 50 times and then restarts
-    stroke(i * angle, 180, 50);
+    stroke(128, 255, 236);
     strokeWeight(2 * cos(i));
     rotateY(angle); // rotates the Shape around the Y coord at the set angle
     beginShape(); // functions allow creating more complex forms. 
@@ -28,9 +28,7 @@ function draw() {
       let x = r * cos(a * offset);
       let y = r * sin(a); // y = r times sin(and the A value)
 			let z = r * cos(angle); // z value = r value times cos(and angle value)
-      vertex(10, 35);
-      vertex(90, 35);
-      vertex(10, 65);
+      
       
       
 
