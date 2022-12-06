@@ -9,8 +9,10 @@ var b = 52;
 
 var colorPicker;
 
+
 function setup() {
   createCanvas(windowWidth, windowHeight, WEBGL); // how big the canvas is
+  
   angleMode(DEGREES);
   colorMode(RGB); // what colour format to copy
   colorPicker = createColorPicker('#ffff');
@@ -21,12 +23,16 @@ function setup() {
 }
 
 function draw() {
-  background(0);
+  
+  background(0)
+  
+
 	let offset = map(noise(xoff), 0, 1, 2, 5);
   for(let i = 3; i < 50; i++){ // draws the pattern up to 50 times and then restarts
     stroke(colorPicker.color())
-    strokeWeight(2 * cos(i));
-    rotateY(angle); // rotates the Shape around the Y coord at the set angle
+    strokeWeight(1 * cos(i));
+    rotateZ(angle); // rotates the Shape around the Y coord at the set angle
+    
     beginShape(); // functions allow creating more complex forms. 
      // beginShape() begins recording vertices for a shape 
     for(let a = random(); a < res; a+=res/180){
@@ -36,7 +42,7 @@ function draw() {
       let y = r * sin(a); // y = r times sin(and the A value)
 			let z = r * cos(angle); // z value = r value times cos(and angle value)
       
-      keyPressed();
+    
       
 
       vertex(x, y, z); // specifies the vertex coords for points, lines, triangles etc
@@ -51,11 +57,8 @@ function doubleClicked() {
   save("vortex.png");
 }  
 
-function keyPressed(){
-  if (keyPressed == LEFT_ARROW)
-stroke(colorPicker.color())
 
-}
+
 // sin Calculates the sine of an angle. 
 //This function takes into account the current angleMode. 
 //Values are returned in the range -1 to 1.
