@@ -2,7 +2,7 @@ let angle = 9; // angle value = what angle the pattern moves at
 let r; // lets r = any value
 let res = 1000;
 let xoff = 0;
-//var hue = random(120, 255);
+
 var red = 149;
 var g = 35;
 var b = 52;
@@ -10,14 +10,16 @@ var b = 52;
 var colorPicker;
 
 
+
+
 function setup() {
   createCanvas(windowWidth, windowHeight, WEBGL); // how big the canvas is
   
   angleMode(DEGREES);
   colorMode(RGB); // what colour format to copy
-  colorPicker = createColorPicker('#ffff');
+  colorPicker = createColorPicker('#ffff');  // starts off as white
 
-  colorPicker.position(50, height);
+  colorPicker.position(50, height); // colour picker is in bottom left corner
   noFill();
   
 }
@@ -26,7 +28,6 @@ function draw() {
   
   background(0)
   
-
 	let offset = map(noise(xoff), 0, 1, 2, 5);
   for(let i = 3; i < 50; i++){ // draws the pattern up to 50 times and then restarts
     stroke(colorPicker.color())
@@ -49,7 +50,7 @@ function draw() {
     }
     endShape(); //endShape() stops recording
   }
-  angle += 0.01;
+  angle += 0.01; // speed the shape rotates at
   r += 0.04;
 }
 
@@ -69,3 +70,7 @@ function doubleClicked() {
 
 // res Controls either width of a bandpass frequency, 
 //or the resonance of a low/highpass cutoff frequency.
+
+// offset() method allows us to retrieve the current position of an element 
+//(specifically its border box, which excludes margins) relative to the document. Contrast this with . position() , 
+// which retrieves the current position relative to the offset parent.
