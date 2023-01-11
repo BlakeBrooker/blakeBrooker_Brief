@@ -42,7 +42,7 @@ function draw() {
      // beginShape() begins recording vertices for a shape 
     for(let a = random(); a < res; a+=res/180){
         let r = random(- 200, 200); //going to the far left of the canvas inverts the pattern, going to the right inverts it back to normal and zooms in
-        r = (50 * abs(sin(a * 10))) + 200; // mouseX variable moves the pattern along with the mouse moving on the x coord
+        r = (mouseX * abs(sin(a * 10))) + 200; // mouseX variable moves the pattern along with the mouse moving on the x coord
       let x = r * cos(a * offset);
       let y = r * sin(a); // y = r times sin(and the A value)
 			let z = r * cos(angle); // z value = r value times cos(and angle value)
