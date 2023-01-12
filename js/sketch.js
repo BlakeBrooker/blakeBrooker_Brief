@@ -46,6 +46,8 @@ function draw() {
       let x = r * cos(a * offset);
       let y = r * sin(a); // y = r times sin(and the A value)
 			let z = r * cos(angle); // z value = r value times cos(and angle value)
+
+      
       
       //let val = slider.value();
   
