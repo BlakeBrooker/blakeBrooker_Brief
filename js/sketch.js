@@ -16,7 +16,7 @@ var colorPicker;
 
 
 function setup() {
-  createCanvas(1000, 1000, WEBGL); // how big the canvas is
+  createCanvas(1250, 1250, WEBGL); // how big the canvas is
   
   angleMode(DEGREES);
   colorMode(RGB); // what colour format to copy
